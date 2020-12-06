@@ -65,6 +65,20 @@ window.addEventListener('scroll', () => {
 
 /* SOURCE: https://stackoverflow.com/questions/52637835/dynamically-change-background-color-on-scroll */
 
+let destinationImage = document.querySelector('.content-destination img');
+console.log(destinationImage);
+
+let scale = 1;
+function zoomPicture(event) {
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    event.target.style.transform = `scale(${scale})`;
+}
+destinationImage.addEventListener('wheel', zoomPicture);
+
+
+
 
 
 
