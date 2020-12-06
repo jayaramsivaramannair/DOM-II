@@ -22,7 +22,6 @@ titleImage.addEventListener('mouseover', transparentImage);
 document.body.addEventListener('keydown', (e) => e.target.style.backgroundColor = 'coral');
 
 //Change the color of links after a focus event
-
 let homeLink = document.querySelector('.nav-link');
 console.log(homeLink);
 homeLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
@@ -38,6 +37,14 @@ blogLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
 let contactLink = document.querySelector('nav a:last-child');
 console.log(contactLink);
 contactLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
+
+
+// Change the logo heading after the load event is fired
+window.addEventListener('load', function(e) {
+    let mainHeading = document.querySelector(".logo-heading");
+    console.log(mainHeading.textContent = 'Fun-Bus-On-The-Road');
+    mainHeading.style.color = 'coral';
+});
 
 
 
