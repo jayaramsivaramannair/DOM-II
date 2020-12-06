@@ -19,35 +19,41 @@ titleImage.addEventListener('mouseover', transparentImage);
 
 
 //Change the backgroundColor on body after a keydown event;
-document.body.addEventListener('keydown', (e) => e.target.style.backgroundColor = 'coral');
+document.body.addEventListener('keydown', function(e) {
+    e.target.style.backgroundColor = 'purple';
+    e.target.style.color = 'white';
+});
 
-//Change the color of links after a focus event
+//Change the color of links after a click event
 let homeLink = document.querySelector('.nav-link');
 console.log(homeLink);
-homeLink.addEventListener('focus', function(e) {
-    e.preventDefault();
+homeLink.addEventListener('click', function(e) {
     e.target.style.color = 'coral';
+    console.log(e.currentTarget);
 });
 
 let aboutUSLink = document.querySelector('nav a:nth-child(2)');
 console.log(aboutUSLink);
-aboutUSLink.addEventListener('focus', function(e) {
+aboutUSLink.addEventListener('click', function(e) {
     e.preventDefault();
     e.target.style.color = 'coral';
+    console.log(e.currentTarget);
 });
 
 let blogLink = document.querySelector('nav a:nth-child(3)');
 console.log(blogLink);
-blogLink.addEventListener('focus', function(e) {
+blogLink.addEventListener('click', function(e) {
     e.preventDefault();
-    e.target.style.color = 'coral'
+    e.target.style.color = 'coral';
+    console.log(e.currentTarget);
 });
 
 let contactLink = document.querySelector('nav a:last-child');
 console.log(contactLink);
-contactLink.addEventListener('focus', function(e) {
+contactLink.addEventListener('click', function(e) {
     e.preventDefault();
     e.target.style.color = 'coral';
+    console.log(e.currentTarget);
 
 });
 
@@ -103,8 +109,13 @@ let secondImage = allImages[1];
 console.log(secondImage);
 let scaleValue = 1.15;
 
-firstImage.addEventListener('dblclick', (e) => e.target.style.transform = `scale(${scaleValue})`);
-secondImage.addEventListener('dblclick', (e) => e.target.style.transform = `scale(${scaleValue})`);
+firstImage.addEventListener('dblclick', function(e) {
+    e.target.style.transform = `scale(${scaleValue})`; 
+});
+
+secondImage.addEventListener('dblclick', function(e) {
+    e.target.style.transform = `scale(${scaleValue})`;
+});
 
 
 
