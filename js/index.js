@@ -29,8 +29,10 @@ document.body.addEventListener('keydown', function(e) {
 
 //Change the color of links after a click event
 let homeLink = document.querySelector('.nav-link');
+homeLink.href="www.google.com";
 console.log(homeLink);
 homeLink.addEventListener('click', function(e) {
+    e.preventDefault(); //This will prevent the page from refreshing
     e.target.style.color = 'coral';
     console.log(e.currentTarget);
 });
