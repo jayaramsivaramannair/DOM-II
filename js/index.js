@@ -18,4 +18,15 @@ function transparentImage(event) {
 titleImage.addEventListener('mouseover', transparentImage);
 
 
+//Change the backgroundColor on body after a keydown event;
+document.body.addEventListener('keydown', (e) => e.target.style.backgroundColor = 'coral');
+
+
+
+
+
+
+
+
+
 
