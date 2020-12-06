@@ -24,19 +24,32 @@ document.body.addEventListener('keydown', (e) => e.target.style.backgroundColor 
 //Change the color of links after a focus event
 let homeLink = document.querySelector('.nav-link');
 console.log(homeLink);
-homeLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
+homeLink.addEventListener('focus', function(e) {
+    e.preventDefault();
+    e.target.style.color = 'coral';
+});
 
 let aboutUSLink = document.querySelector('nav a:nth-child(2)');
 console.log(aboutUSLink);
-aboutUSLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
+aboutUSLink.addEventListener('focus', function(e) {
+    e.preventDefault();
+    e.target.style.color = 'coral';
+});
 
 let blogLink = document.querySelector('nav a:nth-child(3)');
 console.log(blogLink);
-blogLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
+blogLink.addEventListener('focus', function(e) {
+    e.preventDefault();
+    e.target.style.color = 'coral'
+});
 
 let contactLink = document.querySelector('nav a:last-child');
 console.log(contactLink);
-contactLink.addEventListener('focus', (e) => e.target.style.color = 'coral');
+contactLink.addEventListener('focus', function(e) {
+    e.preventDefault();
+    e.target.style.color = 'coral';
+
+});
 
 
 // Change the logo heading after the load event is fired
@@ -54,7 +67,7 @@ window.addEventListener('resize', function(e) {
 //Dynamically change the background color. Gets darker as we scroll down.
 window.addEventListener('scroll', () => {
     let red = 255, green = 127, blue = 80;
-    let y = (window.scrollY || windowpageYOffset) / 200;
+    let y = (window.scrollY || window.pageYOffset) / 200;
     y = (y < 1 ? 1 : y);
     red = Math.round(red / y);
     green = Math.round(green / y);
@@ -65,6 +78,8 @@ window.addEventListener('scroll', () => {
 
 /* SOURCE: https://stackoverflow.com/questions/52637835/dynamically-change-background-color-on-scroll */
 
+
+//Added the scroll event to zoom destination image
 let destinationImage = document.querySelector('.content-destination img');
 console.log(destinationImage);
 
@@ -76,6 +91,21 @@ function zoomPicture(event) {
     event.target.style.transform = `scale(${scale})`;
 }
 destinationImage.addEventListener('wheel', zoomPicture);
+
+// Allow the first two images in content to scale up on double click
+let allImages = document.querySelectorAll('.img-content img');
+console.log(allImages);
+
+let firstImage = allImages[0];
+console.log(firstImage);
+
+let secondImage = allImages[1];
+console.log(secondImage);
+let scaleValue = 1.15;
+
+firstImage.addEventListener('dblclick', (e) => e.target.style.transform = `scale(${scaleValue})`);
+secondImage.addEventListener('dblclick', (e) => e.target.style.transform = `scale(${scaleValue})`);
+
 
 
 
