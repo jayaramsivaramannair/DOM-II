@@ -1,14 +1,17 @@
 // Your code goes here
+// Events applied to this webpage are: 
+/*
+1) mouseover
+2) keydown
+3) click
+4) load
+5) resize
+6) scroll
+7) wheel
+8) dblclick
+9) copy
 
-//mouseover - increase title image
-//keydown - change the background color and font color
-//Load - Make something happen when the window loads
-//wheel - scale the title with wheel event
-//focus - use for sign me up buttons
-//resize - use for the window
-//select - when a text has been selected
-//dbl click - when an image has been double clicked
-//drag & drop - image swap
+*/
 
 //Make the title image a little transparent when mouseover event occurs
 let titleImage = document.querySelector('img');
