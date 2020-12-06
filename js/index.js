@@ -117,6 +117,15 @@ secondImage.addEventListener('dblclick', function(e) {
     e.target.style.transform = `scale(${scaleValue})`;
 });
 
+//Text is appended when a piece of the paragraph is copied. 
+let firstParagraph = document.querySelector('p');
+console.log(firstParagraph);
+firstParagraph.addEventListener('copy', function(e) {
+    let selection = document.getSelection();
+    console.log(selection);
+    selection.anchorNode.data += " [This Paragraph has been COPIED!]";
+});
+
 
 
 
