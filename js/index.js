@@ -10,13 +10,14 @@
 7) wheel
 8) dblclick
 9) copy
+10) beforePrint
 
 */
 
 //Make the title image a little transparent when mouseover event occurs
 let titleImage = document.querySelector('img');
 function transparentImage(event) {
-    event.target.style.opacity = 0.7;
+    event.target.style.opacity = 0.5;
 }
 titleImage.addEventListener('mouseover', transparentImage);
 
@@ -66,7 +67,7 @@ contactLink.addEventListener('click', function(e) {
 // Change the logo heading after the load event is fired
 window.addEventListener('load', function(e) {
     let mainHeading = document.querySelector(".logo-heading");
-    console.log(mainHeading.textContent = 'Fun-Bus-On-The-Road');
+    console.log(mainHeading.textContent = 'Fun-Bus : LOADED');
     mainHeading.style.color = 'coral';
 });
 
@@ -128,8 +129,46 @@ console.log(firstParagraph);
 firstParagraph.addEventListener('copy', function(e) {
     let selection = document.getSelection();
     console.log(selection);
-    selection.anchorNode.data += " [This Paragraph has been COPIED!]";
+    selection.anchorNode.data += " [TEXT COPIED!]";
 });
+
+//Added click event to the sign up buttons at the bottom
+
+let firstSignUpButton = document.querySelectorAll('.destination .btn')[0];
+let secondSignUpButton = document.querySelectorAll('.destination .btn')[1];
+let thirdSignUpButton = document.querySelectorAll('.destination .btn')[2];
+
+console.log(firstSignUpButton);
+console.log(secondSignUpButton);
+console.log(thirdSignUpButton);
+
+firstSignUpButton.addEventListener('click', function(e) {
+    e.target.textContent = "Right Choice!"
+    e.target.style.color = 'aqua';
+    e.target.style.backgroundColor = 'purple';
+})
+
+secondSignUpButton.addEventListener('click', function(e) {
+    e.target.textContent = "Right Choice!"
+    e.target.style.color = 'aqua';
+    e.target.style.backgroundColor = 'purple';
+})
+
+thirdSignUpButton.addEventListener('click', function(e) {
+    e.target.textContent = "Right Choice!"
+    e.target.style.color = 'aqua';
+    e.target.style.backgroundColor = 'purple';
+})
+
+//beforeprint event added to the window
+window.addEventListener('beforeprint', function(e) {
+    alert("Please Consider The Environment Before Printing!")
+})
+
+
+
+
+
 
 
 
